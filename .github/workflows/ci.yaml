@@ -1,23 +1,26 @@
-# name of pipeline workflow
-name: Nikhil terraform workflow 
-# trigger action 
-# when there is a push happen in master branch pipeline gonna trigger
-on: 
+name: ashuothshh job 
+# trigger point 
+on:
   push:
-    branches: [ "dryrun-aws" ]  
+    branches: [ "dryrun-aws" ]
     paths-ignore:
       - "README.md"
       - "terraform.tfstate"
 
-#createing jobs
+# creating jobs 
 jobs:
-# stage 1 with terraform details 
-  infra-build:
+  test-job:
     runs-on: ubuntu-latest 
     steps: # what exactly you want to run in ubuntu machine 
-    - name: hello world printing 
+    # calling first github action to clone my dryrun-aws data to runner machine 
+    - name: taking code from my repo 
+      uses: actions/checkout@v5
+      with:
+        ref: dryrun-aws 
+
+    - name: my first step to test github action 
       run: |
-      echo "Hello world"
-      git version
-      whoami
-      ls -a
+        echo "Hello world"
+        git version 
+        whoami
+        ls -a 
