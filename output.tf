@@ -12,4 +12,6 @@ output "my-ec2ID" {
 resource "local_file" "Nikhil-data" {
   content  = aws_instance.example.public_ip
   filename = "${path.module}/myipo.bar"
+  #making manual dependency
+  depends_on = [ aws_instance.example ]
 }
