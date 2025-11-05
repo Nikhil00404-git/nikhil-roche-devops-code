@@ -4,7 +4,7 @@ name: Nikhil terraform workflow
 # when there is a push happen in master branch pipeline gonna trigger
 on: 
   push:
-    branches: [ "master" ]  
+    branches: [ "dryrun-aws" ]  
     paths-ignore:
       - "README.md"
       - "terraform.tfstate"
