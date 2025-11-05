@@ -6,7 +6,7 @@ resource "tls_private_key" "example" {
 #save my private key
 resource "local_file" "private-key-data" {
   content = tls_private_key.example.private_key_pem
-  filename = "${path.module}/"
+  filename = "${path.module}/nikhilKey.pem"
   file_permission = 0400
 }
 
