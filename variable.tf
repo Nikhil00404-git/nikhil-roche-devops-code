@@ -21,3 +21,11 @@ variable "ec2-key-name" {
     description = "ec2-key-name"
   
 }
+
+variable "privet-key-algo" {
+  type = string
+}
+
+variable "key-size" {
+  type = number
+}
