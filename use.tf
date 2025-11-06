@@ -20,10 +20,18 @@ provider "aws" {
   region = "ap-southeast-2"
 }
 
-resource "local_file" "foo" {
-  content  = aws_instance.example.public_ip
-  filename = "${path.module}/myip.txt"
-  #making manual dependency
-  depends_on = [ aws_instance.example ]
-}
 
+# calling module 
+
+    module "my-nikhil-module-ec2" {
+    source = "./modules/ec2"
+    Nikhil-ami-id = "ami-0a25a306450a2cba3"
+    vm-name = "Nikhil-vm-1"
+    vm-size = "t2.nano"
+    ec2-key-name = "nikhil-day3-key"
+    privet-key-algo = "RSA"
+    key-size = 4096
+    my-vpc-id = "vpc-02d56e9aa1ce2f114"
+    my-sec-group-name = "my-sec-group"
+    novm=2
+}
