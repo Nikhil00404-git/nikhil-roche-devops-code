@@ -90,7 +90,7 @@ jobs:
       run: |
         echo "running ansible playbook"
         cd my-ansible
-        ansible-playbook -i ../ansible-inventory.txt --private-key ../nikhil-key.pem playbook1.yml
+        ansible-playbook -i ../ansible-inventory.txt --private-key ../nikhil-key.pem playbook1.yaml
 
 
   
