@@ -92,7 +92,7 @@ jobs:
         cd my-ansible
         ansible-playbook -i ../ansible-inventory.txt --private-key ../nikhil-key.pem playbook1.yaml
         
- destroy-job-terraform:
+  destroy-job-terraform:
     runs-on: ubuntu-latest 
     needs: infra-configure-job
     steps:
