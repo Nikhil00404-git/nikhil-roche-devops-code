@@ -51,8 +51,8 @@ jobs:
     - name: upload ansible inventory to github artifacts
       user: action/upload-artifact@v4
       with:
-      name: nikhil-github-artifact
-      path: modules/ec2/myip.txt 
+        name: nikhil-github-artifact
+        path: modules/ec2/myip.txt 
 
   infra-destroy-job:
     needs: infra-provision-job
