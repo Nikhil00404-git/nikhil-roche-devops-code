@@ -49,7 +49,7 @@ jobs:
         terraform apply --auto-approve
         ls modules/ec2
     - name: upload ansible inventory to github artifacts
-      user: action/upload-artifact@v4
+      uses: action/upload-artifact@v4
       with:
         name: nikhil-github-artifact
         path: modules/ec2/myip.txt 
