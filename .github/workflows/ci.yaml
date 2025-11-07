@@ -72,7 +72,7 @@ jobs:
     - name: downloading ansible-inventory as artifact
       uses: actions/download-artifact@v4
       with:
-        name: shobhit-github-artifact
+        name: nikhil-github-artifact
 #listing artifact
     - name: display structure of download file
       run: ls -R
