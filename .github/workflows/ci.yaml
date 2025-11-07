@@ -85,7 +85,7 @@ jobs:
         echo "setup of ansible in ubunt"
         sudo apt update
         sudo apt install ansible -y
-        ancible --version
+        ansible --version
     - name: running ansible playbook in dynamic inventory
       run: |
         echo "running ansible playbook"
