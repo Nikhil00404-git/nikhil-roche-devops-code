@@ -84,6 +84,11 @@ jobs:
       run: | 
         echo "setup of ansible in ubunt"
         sudo apt update
-        sudo apt install ansible2 -y
+        sudo apt install ansible -y
         ancible --version
+    - name: running ansible playbook in dynamic inventory
+      run: |
+        echo "running ansible playbook"
+        cd my-ansible
+        ansible-playbook -i ../ansible-inventory.txt --private-key ../nikhil-key.pem playbook.yml
   
