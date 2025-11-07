@@ -26,9 +26,9 @@ provider "aws" {
     module "my-nikhil-module-ec2" {
     source = "./modules/ec2"
     Nikhil-ami-id = "ami-0a25a306450a2cba3"
-    vm-name = "Nikhil-vm-1"
+    vm-name = "Nikhil-vm-madule-day-final"
     vm-size = "t2.nano"
-    ec2-key-name = "nikhil-day3-key"
+    ec2-key-name = "nikhil-modfinal"
     privet-key-algo = "RSA"
     key-size = 4096
     my-vpc-id = "vpc-02d56e9aa1ce2f114"

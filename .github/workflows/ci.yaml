@@ -2,7 +2,7 @@ name: ashuothshh job
 # trigger point 
 on:
   push:
-    branches: [ "main1" ]
+    branches: [ "main" ]
     paths-ignore:
       - "README.md"
       - "terraform.tfstate"
@@ -46,7 +46,13 @@ jobs:
         terraform init 
         terraform plan 
         sleep 2
-        terraform apply --auto-approve 
+        terraform apply --auto-approve
+        ls modules/ec2
+    - name: upload ansible inventory to github artifacts
+      user: action/upload-artifact@v4
+      with:
+      name: nikhil-github-artifact
+      path: modules/ec2/myip.txt 
 
   infra-destroy-job:
     needs: infra-provision-job
@@ -62,7 +68,10 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ap-southeast-2
-
+    - name: download ansible inven from artifacts
+      user: action/download-artifact@v5
+      with:
+        name: nikhil-github-artifact   
     # isntalling  
     - name: installing terraform 
       uses: hashicorp/setup-terraform@v3
